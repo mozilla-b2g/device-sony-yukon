@@ -130,7 +130,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
     Tag \
-    nfc_nci.msm8226
+    nfc_nci.pn54x.default
 
 #GPS
 PRODUCT_PACKAGES += \
@@ -209,5 +209,32 @@ $(call add-product-dex-preopt-module-config,services,--compiler-filter=speed)
 # Platform specific default properties
 #
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    persist.data.qmi.adb_logmask=0
+    persist.sys.usb.config=mass_storage \
+    persist.data.qmi.adb_logmask=0 \
+    ro.adb.secure=0
+
+# for Gecko to support bluedroid stack
+PRODUCT_PACKAGES += \
+    bluetooth.default
+
+# for Gecko to boot to recovery
+PRODUCT_PACKAGES += \
+    librecovery
+
+ENABLE_LIBRECOVERY := true
+
+# Enable virtual home button for b2g
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.moz.has_home_button=0 \
+    ro.moz.nfc.enabled=true
+
+PRODUCT_PACKAGES += \
+    nfcd \
+    init.sh \
+    timekeep
+
+PRODUCT_COPY_FILES += \
+    device/sony/yukon/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
+    device/sony/yukon/volume.cfg:system/etc/volume.cfg \
+    hardware/sony/timekeep/gecko/TimeKeepService.js:system/b2g/distribution/bundles/timekeep/TimeKeepService.js \
+    hardware/sony/timekeep/gecko/chrome.manifest:system/b2g/distribution/bundles/timekeep/chrome.manifest
