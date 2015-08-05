@@ -224,9 +224,10 @@ PRODUCT_PACKAGES += \
 ENABLE_LIBRECOVERY := true
 
 # Enable virtual home button for b2g
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.moz.has_home_button=0 \
-    ro.moz.nfc.enabled=true
+PRODUCT_PROPERTY_OVERRIDES +=                \
+    ro.moz.has_home_button=0                 \
+    ro.moz.nfc.enabled=true                  \
+    ro.moz.ril.0.network_types=gsm,wcdma,lte \
 
 PRODUCT_PACKAGES += \
     nfcd \
