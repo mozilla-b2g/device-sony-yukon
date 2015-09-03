@@ -229,8 +229,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.moz.nfc.enabled=true
 
 PRODUCT_PACKAGES += \
-    nfcd \
     init.sh \
+    librecovery \
+    nfcd \
     timekeep
 
 PRODUCT_COPY_FILES += \
