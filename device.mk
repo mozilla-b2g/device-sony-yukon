@@ -222,6 +222,10 @@ PRODUCT_PACKAGES += \
     librecovery
 
 ENABLE_LIBRECOVERY := true
+RECOVERY_EXTERNAL_STORAGE := /data/media/0
+# Enable set_metadata() and set_metadata_recursive() in updater-script
+# if device deprecates set_perm() and set_perm_recursive()
+export USE_SET_METADATA := true
 
 # Enable virtual home button for b2g
 PRODUCT_PROPERTY_OVERRIDES += \
