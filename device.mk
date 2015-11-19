@@ -233,4 +233,4 @@ PRODUCT_COPY_FILES += \
     device/sony/yukon/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
     device/sony/yukon/volume.cfg:system/etc/volume.cfg \
     hardware/sony/timekeep/gecko/TimeKeepService.js:system/b2g/distribution/bundles/timekeep/TimeKeepService.js \
-    hardware/sony/timekeep/gecko/chrome.manifest:system/b2g/distribution/bundles/timekeep/chrome.manifest
+    hardware/sony/timekeep/gecko/chrome.manifest:system/b2g/distribution/bundles/timekeep/chrome.manifest \
